@@ -1,0 +1,8 @@
+/.git/
+/.idea/
+*.bak
+*.txt
+*.xlsm
+tmp.py
+/__pycache__
+/__pycache__/
