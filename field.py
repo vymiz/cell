@@ -1,5 +1,5 @@
 import random
-
+from cell import Cell
 
 class Dish:
 
@@ -18,17 +18,20 @@ class Dish:
         for self.r in self.field:
             print('+', end='')
             for self.c in self.r:
-                print(self.c, end='')
+                if self.c != ' ':
+                    print('#', end='')
+                else:
+                    print(self.c, end='')
             print('+')
         print('+' * (self.col + 2))
 
-    def install(self):
+    def install(self, klass):
         self.c = random.randint(0, self.col-1)
         self.r = random.randint(0, self.raw-1)
-        self.field[self.r][self.c] = '#'
+        self.field[self.r][self.c] = klass(self.col, self.raw)
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 if __name__ == '__main__':
     dish = Dish(5, 10)
-    dish.install()
+    dish.install(Cell)
     dish.draw()
