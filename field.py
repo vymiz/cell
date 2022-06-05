@@ -14,15 +14,6 @@ class Dish:
                 self.tmp.append(' ')
             self.field.append(self.tmp)
 
-    def draw_simple(self):
-        print('+' * (self.col + 2))
-        for self.r in self.field:
-            print('+', end='')
-            for self.c in self.r:
-                print(self.c, end='')
-            print('+')
-        print('+' * (self.col + 2))
-
     def draw(self):
         print('+' * (self.col + 2))
         for self.r in range(self.raw):
@@ -41,9 +32,7 @@ class Dish:
         for self.r in range(self.raw):
             for self.c in range(self.col):
                 if self.field[self.r][self.c] != ' ':
-                    self.field[self.r][self.c](self)
-                    # if self.field[self.r][self.c].img == ' ':
-                    #     self.field[self.r][self.c] = ' '
+                    self.field[self.r][self.c](self.field)
 
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

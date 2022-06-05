@@ -1,5 +1,3 @@
-import random
-
 class Cell:
 
     def __init__(self, raw, col):
@@ -11,17 +9,12 @@ class Cell:
     def __str__(self):
         return self.img
 
-    def apoptos(self, klass):
-        self.img = ' '
-        klass.field[self.raw][self.col] = ' '
+    def apoptos(self, field):
+        field[self.raw][self.col] = ' '
 
-    def __call__(self, klass):
-        self.apoptos(klass)
+    def __call__(self, field):
+        self.apoptos(field)
 
 
 if __name__ == '__main__':
-    x = Cell(10, 10)
-    print(x)
-    # x.__del__()
-    x = x()
-    print(x)
+    pass
