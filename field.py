@@ -41,9 +41,9 @@ class Dish:
         for self.r in range(self.raw):
             for self.c in range(self.col):
                 if self.field[self.r][self.c] != ' ':
-                    self.field[self.r][self.c]()
-                    if self.field[self.r][self.c].img == ' ':
-                        self.field[self.r][self.c] = ' '
+                    self.field[self.r][self.c](self)
+                    # if self.field[self.r][self.c].img == ' ':
+                    #     self.field[self.r][self.c] = ' '
 
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

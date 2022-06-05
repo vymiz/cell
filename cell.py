@@ -11,11 +11,12 @@ class Cell:
     def __str__(self):
         return self.img
 
-    def __del__(self):
+    def apoptos(self, klass):
         self.img = ' '
+        klass.field[self.raw][self.col] = ' '
 
-    def __call__(self):
-        self.__del__()
+    def __call__(self, klass):
+        self.apoptos(klass)
 
 
 if __name__ == '__main__':
