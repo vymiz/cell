@@ -15,13 +15,13 @@ class Dish:
             self.field.append(self.tmp)
 
     def draw(self):
-        print('+' * (self.col + 2))
+        print('+','-' * self.col, '+', sep='')
         for self.r in range(self.raw):
-            print('+', end='')
+            print('|', end='')
             for self.c in range(self.col):
                 print(self.field[self.r][self.c], end='')
-            print('+')
-        print('+' * (self.col + 2))
+            print('|')
+        print('+','-' * self.col, '+', sep='')
 
     def install(self, klass):
         self.c = random.randint(0, self.col - 1)

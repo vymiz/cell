@@ -12,8 +12,13 @@ class Cell:
     def apoptos(self, field):
         field[self.raw][self.col] = ' '
 
+    def empty_check(self, field):
+        pass
+
     def __call__(self, field):
-        self.apoptos(field)
+        self.ctr += 1
+        if self.ctr > 10:
+            self.apoptos(field)
 
 
 if __name__ == '__main__':
