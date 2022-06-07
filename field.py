@@ -15,6 +15,7 @@ class Dish:
             self.field.append(self.tmp)
 
     def draw(self):
+        print()
         print('+','-' * self.col, '+', sep='')
         for self.r in range(self.raw):
             print('|', end='')
