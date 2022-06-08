@@ -38,9 +38,9 @@ class Dish:
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 if __name__ == '__main__':
-    dish = Dish(3, 6)
+    dish = Dish(3, 4)
     dish.install(Cell)
     dish.draw()
     dish.process()
-    dish.draw()
-    print(dish.field)
+    # dish.draw()
+    # print(dish.field)
