@@ -14,6 +14,10 @@ class Cell:
         self.tmp_r = None
         self.empty_arr = None
         self.empty_field = None
+        self.r = None
+        self.c = None
+        # Vars for Mitosis func:
+        self.trigger = True
 
     def __str__(self):
         return self.img
@@ -34,7 +38,6 @@ class Cell:
                         if self.tmp_tuple not in self.empty_arr:  # erase duplicates which get here from nothing
                             if field[self.tmp_r][self.tmp_c] == ' ':  # check is this field empty?
                                 self.empty_arr.append(self.tmp_tuple)
-        # print(self.empty_arr)
         if len(self.empty_arr) == 0:
             self.empty_field = None
         elif len(self.empty_arr) == 1:
@@ -42,22 +45,21 @@ class Cell:
         else:
             self.empty_field = random.choice(self.empty_arr)
 
-    def move(self, field):
-        if self.empty_field != None:
+    def mitosis(self, field):
+        self.trigger = not self.trigger
+        if self.empty_field is not None and self.trigger:
             self.r = self.empty_field[0]
             self.c = self.empty_field[1]
-            field[self.r][self.c] = copy.copy(self)
-            # field[self.raw][self.col] = ' '
+            field[self.r][self.c] = Cell(self.r, self.c)
+        if self.empty_field is None:
             self.apoptos(field)
 
     def __call__(self, field):
         self.ctr += 1
-        if self.ctr > 3:
+        if self.ctr >= random.randint(3,7):
             self.apoptos(field)
         self.empty_check(field)
-        self.move(field)
-        # print(self.empty_field)
-        # print(field)
+        self.mitosis(field)
 
 
 if __name__ == '__main__':

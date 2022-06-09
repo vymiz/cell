@@ -3,7 +3,7 @@ from cell import Cell
 import os
 import time
 
-dish = Dish(3, 6)
+dish = Dish(20, 50)
 dish.install(Cell)
 
 while True:
