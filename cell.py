@@ -18,6 +18,7 @@ class Cell:
         self.c = None
         # Vars for Mitosis func:
         self.trigger = True
+        self.choice = None
 
     def __str__(self):
         return self.img
@@ -65,11 +66,15 @@ class Cell:
 
     def __call__(self, field):
         self.ctr += 1
-        if self.ctr >= random.randint(25,100):
+        if self.ctr >= random.randint(5,7):
             self.apoptos(field)
         self.empty_check(field)
-        # self.mitosis(field)
-        self.move(field)
+
+        self.choice = random.randint(1,2)
+        if self.choice == 1:
+            self.move(field)
+        elif self.choice == 2:
+            self.mitosis(field)
 
 
 if __name__ == '__main__':
