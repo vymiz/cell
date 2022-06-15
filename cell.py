@@ -54,12 +54,22 @@ class Cell:
         if self.empty_field is None:
             self.apoptos(field)
 
+    def move(self, field):
+        self.trigger = not self.trigger
+        if self.empty_field is not None and self.trigger:
+            self.r = self.empty_field[0]
+            self.c = self.empty_field[1]
+            field[self.r][self.c] = Cell(self.r, self.c)
+            field[self.r][self.c].ctr = self.ctr
+            self.apoptos(field)
+
     def __call__(self, field):
         self.ctr += 1
-        if self.ctr >= random.randint(3,7):
+        if self.ctr >= random.randint(25,100):
             self.apoptos(field)
         self.empty_check(field)
-        self.mitosis(field)
+        # self.mitosis(field)
+        self.move(field)
 
 
 if __name__ == '__main__':

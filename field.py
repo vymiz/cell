@@ -38,14 +38,18 @@ class Dish:
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 if __name__ == '__main__':
-    dish = Dish(3, 4)
-    dish.install(Cell)
-    dish.draw()
-    print(dish.field)
-    dish.process()
-    dish.draw()
-    print(dish.field)
-    dish.process()
-    dish.draw()
-    print(dish.field)
-    # print(dish.field)
+    pass
+    # ctr = 0
+    # dish = Dish(3, 4)
+    # dish.install(Cell)
+    # while(ctr <= 5):
+    #     dish.draw()
+    #     print(dish.field)
+    #     dish.process()
+    #     dish.draw()
+    #     print(dish.field)
+    #     dish.process()
+    #     dish.draw()
+    #     print(dish.field)
+    #     ctr +=1
+        # print(dish.field)
