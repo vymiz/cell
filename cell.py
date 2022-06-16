@@ -1,6 +1,5 @@
 import random, copy
 
-
 class Cell:
 
     def __init__(self, raw, col):
@@ -66,9 +65,11 @@ class Cell:
 
     def __call__(self, field):
         self.ctr += 1
-        if self.ctr >= random.randint(5,7):
+        if self.ctr >= random.randint(50,100):
             self.apoptos(field)
         self.empty_check(field)
+
+        if len(self.empty_arr) in range(3,6): self.apoptos(field) # if fthe field is overcrowded cell dies
 
         self.choice = random.randint(1,2)
         if self.choice == 1:
