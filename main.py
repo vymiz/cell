@@ -4,7 +4,8 @@ import os, sys
 import time
 
 dish = Dish(10, 25)
-dish.install(Cell)
+dish.install(Cell, '.')
+dish.install(Cell, '*')
 
 while True:
     if sys.platform == 'win32':

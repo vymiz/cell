@@ -24,10 +24,10 @@ class Dish:
             print('|')
         print('+','-' * self.col, '+', sep='')
 
-    def install(self, klass):
+    def install(self, klass, img):
         self.c = random.randint(0, self.col - 1)
         self.r = random.randint(0, self.raw - 1)
-        self.field[self.r][self.c] = klass(self.r, self.c)
+        self.field[self.r][self.c] = klass(self.r, self.c, img)
 
     def process(self):
         for self.r in range(self.raw):

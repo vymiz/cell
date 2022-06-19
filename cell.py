@@ -2,11 +2,11 @@ import random, copy
 
 class Cell:
 
-    def __init__(self, raw, col):
+    def __init__(self, raw, col, img):
         self.col = col
         self.raw = raw
         self.ctr = 1
-        self.img = '#'
+        self.img = img
         # TMP VARS:
         # Vars for empty_check func:
         self.tmp_c = None
@@ -50,7 +50,7 @@ class Cell:
         if self.empty_field is not None and self.trigger:
             self.r = self.empty_field[0]
             self.c = self.empty_field[1]
-            field[self.r][self.c] = Cell(self.r, self.c)
+            field[self.r][self.c] = Cell(self.r, self.c, self.img)
         if self.empty_field is None:
             self.apoptos(field)
 
@@ -59,7 +59,7 @@ class Cell:
         if self.empty_field is not None and self.trigger:
             self.r = self.empty_field[0]
             self.c = self.empty_field[1]
-            field[self.r][self.c] = Cell(self.r, self.c)
+            field[self.r][self.c] = Cell(self.r, self.c, self.img)
             field[self.r][self.c].ctr = self.ctr
             self.apoptos(field)
 
@@ -69,7 +69,7 @@ class Cell:
             self.apoptos(field)
         self.empty_check(field)
 
-        if len(self.empty_arr) in range(3,6): self.apoptos(field) # if fthe field is overcrowded cell dies
+        if len(self.empty_arr) in range(2,6): self.apoptos(field) # if fthe field is overcrowded cell dies
 
         self.choice = random.randint(1,2)
         if self.choice == 1:
