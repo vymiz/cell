@@ -50,7 +50,7 @@ class Cell:
         if self.empty_field is not None and self.trigger:
             self.r = self.empty_field[0]
             self.c = self.empty_field[1]
-            field[self.r][self.c] = Cell(self.r, self.c, self.img)
+            field[self.r][self.c] = self.__class__(self.r, self.c, self.img)
         if self.empty_field is None:
             self.apoptos(field)
 
@@ -59,13 +59,13 @@ class Cell:
         if self.empty_field is not None and self.trigger:
             self.r = self.empty_field[0]
             self.c = self.empty_field[1]
-            field[self.r][self.c] = Cell(self.r, self.c, self.img)
+            field[self.r][self.c] = self.__class__(self.r, self.c, self.img)
             field[self.r][self.c].ctr = self.ctr
             self.apoptos(field)
 
     def __call__(self, field):
         self.ctr += 1
-        if self.ctr >= random.randint(50,100):
+        if self.ctr >= random.randint(10,50):
             self.apoptos(field)
         self.empty_check(field)
 

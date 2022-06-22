@@ -4,15 +4,16 @@ import os, sys
 import time
 
 dish = Dish(10, 25)
-dish.install(Cell, '.')
-dish.install(Cell, '*')
+dish.install(Cell, 'o')
+dish.install(Cell, '+')
+os_type = sys.platform
 
 while True:
-    if sys.platform == 'win32':
+    if os_type == 'win32':
         os.system('cls')
-    elif sys.platform == 'darwin':
+    elif os_type == 'darwin':
         os.system('clear')
 
     dish.draw()
-    time.sleep(.5)
+    time.sleep(1)
     dish.process()
