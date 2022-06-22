@@ -1,13 +1,18 @@
 from field import Dish
 from cell import Cell
-import os
+import os, sys
 import time
 
-dish = Dish(3, 6)
-dish.install(Cell)
+dish = Dish(10, 25)
+dish.install(Cell, '.')
+dish.install(Cell, '*')
 
 while True:
+    if sys.platform == 'win32':
+        os.system('cls')
+    elif sys.platform == 'darwin':
+        os.system('clear')
+
     dish.draw()
-    time.sleep(1)
+    time.sleep(.5)
     dish.process()
-    os.system('cls')
