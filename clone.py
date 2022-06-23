@@ -9,10 +9,11 @@ class Predator(Cell):
             self.apoptos(field)
         self.empty_check(field)
 
+        self.move(field)
+
         if self.busy_field is not None:
             self.kill(field)
 
-        self.move(field)
 
 class Prey(Cell):
 

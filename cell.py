@@ -43,7 +43,7 @@ class Cell:
                             if field[self.tmp_r][self.tmp_c] == ' ':  # check is this field empty?
                                 self.empty_arr.append(self.tmp_tuple)  # if the field is empty is added into arr
                             elif field[self.tmp_r][self.tmp_c] != self.img:
-                                # select field to kill func
+                                # select field to Cell kill func
                                 self.busy_arr.append(self.tmp_tuple)
         # select the field to move
         if len(self.empty_arr) == 0:
@@ -53,7 +53,7 @@ class Cell:
         else:
             self.empty_field = random.choice(self.empty_arr)
 
-        # select the field to kill
+        # select the field to kill Cell
         if len(self.busy_arr) == 0:
             self.busy_field = None
         elif len(self.busy_arr) == 1:
@@ -71,8 +71,7 @@ class Cell:
             self.apoptos(field)
 
     def move(self, field):
-        self.trigger = not self.trigger
-        if self.empty_field is not None and self.trigger:
+        if self.empty_field is not None:
             self.r = self.empty_field[0]
             self.c = self.empty_field[1]
             field[self.r][self.c] = self.__class__(self.r, self.c, self.img)
