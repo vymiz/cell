@@ -79,8 +79,12 @@ class Cell:
             field[self.r][self.c].ctr = self.ctr
             self.apoptos(field)
 
-    def kill(self):
-        pass  # TODO
+    def kill(self, field):
+        if self.busy_field is not None:
+            self.r = self.busy_field[0]
+            self.c = self.busy_field[1]
+            field[self.r][self.c] = self.__class__(self.r, self.c, self.img)
+
 
     def __call__(self, field):
         self.ctr += 1
