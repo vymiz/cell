@@ -5,7 +5,7 @@ class Predator(Cell):
 
     def __call__(self, field):
         self.ctr += 1
-        if self.ctr >= 100:
+        if self.ctr >= 50:
             self.apoptos(field)
         self.empty_check(field)
 

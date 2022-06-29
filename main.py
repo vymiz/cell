@@ -4,7 +4,7 @@ from clone import *
 import os, sys
 import time
 
-dish = Dish(10, 25)
+dish = Dish(20, 60)
 dish.install(Prey, 'o')
 dish.install(Predator, '+')
 os_type = sys.platform

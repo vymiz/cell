@@ -87,7 +87,7 @@ class Cell:
 
     def __call__(self, field):
         self.ctr += 1
-        if self.ctr >= random.randint(10, 50):
+        if self.ctr >= random.randint(40, 50):
             self.apoptos(field)
         self.empty_check(field)
 
